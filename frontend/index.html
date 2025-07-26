@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tickets Partner - Лендінг</title>
+  <link rel="icon" type="image/png" href="https://via.placeholder.com/32" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <meta name="description" content="Tickets Partner - купуйте квитки на події через Telegram-бот швидко та безпечно." />
+  <meta name="keywords" content="Tickets Partner, квитки, події, Telegram-бот, LiqPay, криптовалюта" />
+  <!-- Tailwind CSS CDN (Note: For production, use Tailwind CLI to generate optimized CSS: https://tailwindcss.com/docs/installation) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Slick Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+  <style>
+    :root {
+      --neon-blue: #00f0ff;
+      --neon-purple: #d400ff;
+      --dark-bg: #1a1a2e;
+    }
+
+    body {
+      background-color: var(--dark-bg);
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3 {
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    .button {
+      background: linear-gradient(to right, var(--neon-blue), var(--neon-purple));
+      color: white;
+      font-weight: 600;
+      border-radius: 9999px;
+      transition: all 0.3s;
+      min-width: 120px;
+      touch-action: manipulation;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+    }
+
+    .button:hover {
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+      background: linear-gradient(to right, rgba(0, 240, 255, 0.8), rgba(212, 0, 255, 0.8));
+    }
+
+    @media (min-width: 640px) {
+      .button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .button {
+        padding: 1rem 2rem;
+        font-size: 1.125rem;
+      }
+    }
+
+    .card {
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .footer-link {
+      color: #9ca3af;
+      transition: color 0.2s;
+      font-size: 0.875rem;
+    }
+
+    .footer-link:hover {
+      color: var(--neon-blue);
+    }
+
+    @media (min-width: 640px) {
+      .footer-link {
+        font-size: 1rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .footer-link {
+        font-size: 1.125rem;
+      }
+    }
+
+    .hero-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (min-width: 640px) {
+      .hero-video {
+        object-position: center;
+      }
+    }
+
+    .slick-slide > div {
+      margin: 0 0.5rem;
+    }
+
+    .slick-dots li button:before {
+      color: var(--neon-blue);
+      font-size: 1.125rem;
+    }
+
+    @media (min-width: 640px) {
+      .slick-dots li button:before {
+        font-size: 1.25rem;
+      }
+    }
+
+    .slick-prev, .slick-next {
+      width: 2rem;
+      height: 2rem;
+      z-index: 10;
+    }
+
+    @media (min-width: 640px) {
+      .slick-prev, .slick-next {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .slick-prev, .slick-next {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+
+    .slick-prev:before, .slick-next:before {
+      color: var(--neon-purple);
+      font-size: 1.125rem;
+    }
+
+    @media (min-width: 640px) {
+      .slick-prev:before, .slick-next:before {
+        font-size: 1.25rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .slick-prev:before, .slick-next:before {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      h1 {
+        font-size: 1.875rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      h3 {
+        font-size: 1.25rem;
+      }
+      .card {
+        padding: 1rem;
+      }
+      .button {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+      }
+      .footer-link {
+        font-size: 0.875rem;
+      }
+    }
+
+    @media (min-width: 641px) and (max-width: 1024px) {
+      h1 {
+        font-size: 2.25rem;
+      }
+      h2 {
+        font-size: 1.875rem;
+      }
+      h3 {
+        font-size: 1.5rem;
+      }
+      .card {
+        padding: 1.5rem;
+      }
+      .button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
+
+    @media (min-width: 1025px) {
+      h1 {
+        font-size: 3rem;
+      }
+      h2 {
+        font-size: 2.25rem;
+      }
+      h3 {
+        font-size: 1.5rem;
+      }
+      .card {
+        padding: 2rem;
+      }
+    }
+
+    footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    footer .flex {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      footer .flex {
+        flex-direction: row;
+        gap: 1.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      footer .flex {
+        gap: 2rem;
+      }
+    }
+
+    p, li {
+      line-height: 1.75;
+      font-size: 0.875rem;
+    }
+
+    @media (min-width: 640px) {
+      p, li {
+        font-size: 1rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      p, li {
+        font-size: 1.125rem;
+      }
+    }
+
+    @keyframes gradient-x {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 400% 50%; }
+    }
+
+    .animate-gradient-x {
+      background-size: 400%;
+      animation: gradient-x 15s linear infinite;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .scale-in {
+      animation: scaleIn 0.8s ease-out forwards;
+    }
+
+    .animate-pulse {
+      animation: pulse 2s infinite;
+    }
+
+    .hover\:scale-110:hover {
+      transform: scale(1.1);
+    }
+
+    .hover\:rotate-360:hover {
+      transform: rotate(360deg);
+      transition: transform 0.5s;
+    }
+
+    .transition-all {
+      transition: all 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script async src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script>
+    const { createElement, useState, useEffect } = React;
+
+    // Icons
+    const CalendarIcon = (props) =>
+      createElement('svg', {
+        className: props.className,
+        fill: 'currentColor',
+        viewBox: '0 0 24 24',
+        children: createElement('path', {
+          d: 'M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V8h14v12z',
+        }),
+      });
+
+    const ShieldCheckIcon = (props) =>
+      createElement('svg', {
+        className: props.className,
+        fill: 'currentColor',
+        viewBox: '0 0 24 24',
+        children: createElement('path', {
+          d: 'M12 2L2 7v7c0 5.5 4.5 10 10 10s10-4.5 10-10V7l-10-5zm-1 13.6l-3.5-3.5 1.4-1.4L11 12.2l4.1-4.1 1.4 1.4-5.5 5.5z',
+        }),
+      });
+
+    const CurrencyDollarIcon = (props) =>
+      createElement('svg', {
+        className: props.className,
+        fill: 'currentColor',
+        viewBox: '0 0 24 24',
+        children: createElement('path', {
+          d: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm0-4h-2V9h2v6z',
+        }),
+      });
+
+    const ChevronDownIcon = (props) =>
+      createElement('svg', {
+        className: props.className,
+        fill: 'currentColor',
+        viewBox: '0 0 24 24',
+        children: createElement('path', { d: 'M7 10l5 5 5-5H7z' }),
+      });
+
+    const ChatBubbleLeftRightIcon = (props) =>
+      createElement('svg', {
+        className: props.className,
+        fill: 'currentColor',
+        viewBox: '0 0 24 24',
+        children: createElement('path', {
+          d: 'M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z',
+        }),
+      });
+
+    const MapPinIcon = (props) =>
+      createElement('svg', {
+        className: props.className,
+        fill: 'currentColor',
+        viewBox: '0 0 24 24',
+        children: createElement('path', {
+          d: 'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z',
+        }),
+      });
+
+    const StarIcon = (props) =>
+      createElement('svg', {
+        className: props.className,
+        fill: 'currentColor',
+        viewBox: '0 0 24 24',
+        children: createElement('path', {
+          d: 'M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z',
+        }),
+      });
+
+    // Data
+    const topEvents = [
+      {
+        id: '1',
+        title: 'Концерт',
+        date: '2025-11-01',
+        city: 'Київ',
+        ticketTypes: [{ type: 'Standard', priceUah: 500, priceUsdt: 50 }],
+        image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=300&h=150',
+      },
+      {
+        id: '2',
+        title: 'Театральна вистава',
+        date: '2025-12-15',
+        city: 'Львів',
+        ticketTypes: [{ type: 'VIP', priceUah: 1000, priceUsdt: 100 }],
+        image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=300&h=150',
+      },
+      {
+        id: '3',
+        title: 'Футбольний матч',
+        date: '2025-10-25',
+        city: 'Одеса',
+        ticketTypes: [{ type: 'Fan Zone', priceUah: 200, priceUsdt: 20 }],
+        image: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=300&h=150',
+      },
+    ];
+
+    const formatEventPrice = (event) => {
+      if (event.ticketTypes && event.ticketTypes.length > 0) {
+        return event.ticketTypes
+          .map((type) => `${type.type}: ${type.priceUah || 0} UAH / ${type.priceUsdt || 0} USDT`)
+          .join(', ');
+      }
+      return 'Ціна не вказана';
+    };
+
+    const reviews = [
+      {
+        name: 'Олександр',
+        text: 'Дуже зручний сервіс! Купив квитки за крипту, все швидко і без проблем.',
+        role: 'Відвідувач концерту',
+        avatar: 'https://cdn-icons-png.flaticon.com/512/12965/12965381.png',
+      },
+      {
+        name: 'Марія',
+        text: 'Люблю, що можна вибрати місце прямо в боті. Рекомендую всім!',
+        role: 'Театралка',
+        avatar: 'https://cdn-icons-png.flaticon.com/512/12965/12965385.png',
+      },
+      {
+        name: 'Дмитро',
+        text: 'Класна підтримка, допомогли з поверненням квитка. Дякую!',
+        role: 'Фанат спорту',
+        avatar: 'https://cdn-icons-png.flaticon.com/512/12965/12965377.png',
+      },
+    ];
+
+    const faqs = [
+      { question: 'Як швидко запустити подію?', answer: 'За 5 хвилин! Відкрийте Telegram-бот, створіть подію та поділіться посиланням.' },
+      { question: 'Чи потрібен сайт?', answer: 'Ні, все працює через Telegram. Гості отримують квитки в чаті.' },
+      { question: 'Як працюють виплати?', answer: 'Щоденні виплати на ваш рахунок. Прозора аналітика в боті.' },
+    ];
+
+    const features = [
+      { id: 1, title: 'Широкий вибір', text: 'Концерти, театри, спорт — усе в одному місці.', icon: CalendarIcon },
+      { id: 2, title: 'Гнучкі платежі', text: 'Плати USDT, BTC, SOL або карткою.', icon: CurrencyDollarIcon },
+      { id: 3, title: 'Безпека', text: 'Захищені транзакції та QR-коди для квитків.', icon: ShieldCheckIcon },
+    ];
+
+    const capabilities = [
+      { id: 1, title: 'Гарна сторінка події', text: 'Автоматично створена сторінка, адаптована для мобільних.', icon: CalendarIcon },
+      { id: 2, title: 'Продаж квитків', text: 'Платні чи безкоштовні квитки з промокодами.', icon: CurrencyDollarIcon },
+      { id: 3, title: 'Реєстрація в чаті', text: 'Без форм — усе в Telegram.', icon: ShieldCheckIcon },
+      { id: 4, title: 'Чекін QR-кодами', text: 'Скануйте квитки з телефону, без обладнання.', icon: StarIcon },
+    ];
+
+    const steps = [
+      { step: '1', title: 'Відкрийте бота', text: 'Перейдіть у Telegram-бот Tickets Partner.' },
+      { step: '2', title: 'Створіть подію', text: 'Додайте деталі та налаштуйте квитки.' },
+      { step: '3', title: 'Поширте посилання', text: 'Розкажіть про подію в соцмережах.' },
+    ];
+
+    // Landing Component
+    const Landing = () => {
+      const [faqOpen, setFaqOpen] = useState(null);
+
+      useEffect(() => {
+        if (typeof jQuery !== 'undefined' && jQuery.fn.slick) {
+          try {
+            jQuery('.slider').slick({
+              dots: true,
+              infinite: false,
+              speed: 500,
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              autoplay: true,
+              autoplaySpeed: 5000,
+              arrows: true,
+              responsive: [
+                { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+                { breakpoint: 640, settings: { slidesToShow: 1, slidesToScroll: 1, arrows: false } },
+              ],
+            });
+          } catch (e) {
+            console.error('Slick initialization error:', e);
+          }
+
+          if (window.Telegram?.WebApp) {
+            window.Telegram.WebApp.ready();
+          }
+
+          return () => {
+            try {
+              jQuery('.slider').slick('unslick');
+            } catch (e) {
+              console.error('Slick cleanup error:', e);
+            }
+          };
+        } else {
+          console.error('jQuery or Slick not loaded');
+        }
+      }, []);
+
+      return createElement(
+        'div',
+        { className: 'bg-darkBg text-white min-h-screen font-poppins' },
+        [
+          // Hero Section
+          createElement(
+            'section',
+            {
+              className:
+                'relative min-h-[60vh] sm:min-h-[70vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-r from-[rgba(0,240,255,0.2)] to-[rgba(212,0,255,0.2)] animate-gradient-x',
+            },
+            [
+              createElement('img', {
+                src: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1920&q=80',
+                alt: 'Hero background',
+                className: 'absolute w-full h-full object-cover opacity-30 hero-video',
+              }),
+              createElement('div', { className: 'absolute inset-0 bg-black/40' }),
+              createElement(
+                'div',
+                { className: 'relative z-10 text-center px-4 sm:px-6 md:px-8' },
+                createElement(
+                  'div',
+                  { className: 'scale-in' },
+                  [
+                    createElement('img', {
+                      src: 'https://i.ibb.co/gZxD3sRf/image-3.png',
+                      alt: 'Tickets Partner Logo',
+                      className: 'w-32 sm:w-40 md:w-48 mx-auto mb-4 sm:mb-6 animate-pulse',
+                    }),
+                    createElement(
+                      'h1',
+                      {
+                        className:
+                          'text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)]',
+                      },
+                      'Tickets Partner — Ваш асистент для подій'
+                    ),
+                    createElement(
+                      'p',
+                      {
+                        className:
+                          'text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-6 sm:mb-8 md:mb-10 max-w-xl sm:max-w-2xl md:max-w-3xl mx-auto font-light',
+                      },
+                      'Купуй квитки швидко та безпечно через Telegram-бот. Плати криптовалютою або карткою!'
+                    ),
+                    createElement(
+                      'div',
+                      { className: 'flex flex-col sm:flex-row justify-center gap-4 sm:gap-6' },
+                      [
+                        createElement(
+                          'a',
+                          {
+                            href: 'https://t.me/TP_TicketsPartner_bot',
+                            className: 'button inline-block hover:scale-110 transition-all fade-in-up',
+                            style: { animationDelay: '0.4s' },
+                          },
+                          'Спробувати'
+                        ),
+                        createElement(
+                          'a',
+                          {
+                            href: 'https://t.me/TP_TicketsPartner_bot?start=call',
+                            className:
+                              'button inline-block bg-gray-700/80 border-[rgba(212,0,255,0.5)] hover:bg-gray-600/80 hover:scale-110 transition-all fade-in-up',
+                            style: { animationDelay: '0.6s' },
+                          },
+                          'Забронювати дзвінок'
+                        ),
+                      ]
+                    ),
+                  ]
+                )
+              ),
+            ]
+          ),
+
+          // Features Section
+          createElement(
+            'section',
+            { className: 'py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-gray-800/50 relative' },
+            [
+              createElement('div', {
+                className:
+                  'absolute inset-0 bg-gradient-to-r from-[rgba(0,240,255,0.1)] to-[rgba(212,0,255,0.1)] animate-gradient-x opacity-50 fade-in-up',
+              }),
+              createElement(
+                'h2',
+                {
+                  className:
+                    'text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 md:mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)] fade-in-up',
+                },
+                'Чому обирають Tickets Partner?'
+              ),
+              createElement(
+                'div',
+                { className: 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 max-w-6xl mx-auto relative z-10' },
+                features.map((item, index) =>
+                  createElement(
+                    'div',
+                    {
+                      key: item.id,
+                      className:
+                        'card text-center bg-gray-800/40 backdrop-blur-lg border border-[rgba(0,240,255,0.2)] hover:border-[rgba(212,0,255,0.3)] hover:shadow-lg transition-all fade-in-up',
+                      style: { animationDelay: `${index * 0.2}s` },
+                    },
+                    [
+                      createElement(
+                        'div',
+                        { className: 'hover:rotate-360' },
+                        createElement(item.icon, {
+                          className: 'w-10 sm:w-12 md:w-14 h-10 sm:h-12 md:h-14 mx-auto mb-4 sm:mb-6 text-[var(--neon-blue)]',
+                        })
+                      ),
+                      createElement('h3', { className: 'text-lg sm:text-xl md:text-2xl font-semibold mb-2 sm:mb-4 text-white' }, item.title),
+                      createElement('p', { className: 'text-gray-300' }, item.text),
+                    ]
+                  )
+                )
+              ),
+            ]
+          ),
+
+          // Top Events Section
+          createElement(
+            'section',
+            { className: 'py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8' },
+            [
+              createElement(
+                'h2',
+                {
+                  className:
+                    'text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 md:mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)] fade-in-up',
+                },
+                'Топ-3 заходів'
+              ),
+              createElement(
+                'div',
+                { className: 'slider max-w-6xl mx-auto' },
+                topEvents.map((event) =>
+                  createElement(
+                    'div',
+                    {
+                      key: event.id,
+                      className:
+                        'card overflow-hidden border-[1.5px] border-[rgba(0,240,255,0.3)] hover:border-[rgba(212,0,255,0.4)] hover:shadow-lg transition-all fade-in-up',
+                    },
+                    [
+                      createElement(
+                        'div',
+                        { className: 'relative' },
+                        [
+                          createElement('img', {
+                            src: event.image,
+                            alt: event.title,
+                            className: 'w-full h-48 sm:h-56 md:h-64 object-cover rounded-t-xl',
+                            loading: 'lazy',
+                          }),
+                          createElement('div', { className: 'absolute inset-0 bg-gradient-to-t from-[rgba(17,17,17,0.8)] to-transparent' }),
+                        ]
+                      ),
+                      createElement(
+                        'div',
+                        { className: 'p-4 sm:p-6' },
+                        [
+                          createElement(
+                            'h3',
+                            { className: 'text-lg sm:text-xl md:text-2xl font-semibold text-[var(--neon-blue)] mb-2' },
+                            event.title
+                          ),
+                          createElement(
+                            'p',
+                            { className: 'text-gray-300 flex items-center mb-1' },
+                            [
+                              createElement(CalendarIcon, {
+                                className: 'w-4 sm:w-5 md:w-5 h-4 sm:h-5 md:h-5 mr-2 text-[var(--neon-purple)]',
+                              }),
+                              `Дата: ${event.date}`,
+                            ]
+                          ),
+                          createElement(
+                            'p',
+                            { className: 'text-gray-300 flex items-center mb-1' },
+                            [
+                              createElement(MapPinIcon, {
+                                className: 'w-4 sm:w-5 md:w-5 h-4 sm:h-5 md:h-5 mr-2 text-[var(--neon-purple)]',
+                              }),
+                              `Місто: ${event.city || 'Не вказано'}`,
+                            ]
+                          ),
+                          createElement(
+                            'p',
+                            { className: 'text-gray-300 flex items-center mb-3 sm:mb-4' },
+                            [
+                              createElement(CurrencyDollarIcon, {
+                                className: 'w-4 sm:w-5 md:w-5 h-4 sm:h-5 md:h-5 mr-2 text-[var(--neon-purple)]',
+                              }),
+                              `Ціна: ${formatEventPrice(event)}`,
+                            ]
+                          ),
+                          createElement(
+                            'a',
+                            { href: 'https://t.me/TP_TicketsPartner_bot', className: 'button inline-block text-sm sm:text-base md:text-md' },
+                            'Купити квиток'
+                          ),
+                        ]
+                      ),
+                    ]
+                  )
+                )
+              ),
+            ]
+          ),
+
+          // Capabilities Section
+          createElement(
+            'section',
+            { className: 'py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-gray-800/50' },
+            [
+              createElement(
+                'h2',
+                {
+                  className:
+                    'text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 md:mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)] fade-in-up',
+                },
+                'Можливості Tickets Partner'
+              ),
+              createElement(
+                'div',
+                { className: 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-10 max-w-6xl mx-auto' },
+                capabilities.map((item, index) =>
+                  createElement(
+                    'div',
+                    {
+                      key: item.id,
+                      className:
+                        'card text-center bg-gray-800/40 backdrop-blur-lg border border-[rgba(0,240,255,0.2)] hover:border-[rgba(212,0,255,0.3)] hover:shadow-lg transition-all fade-in-up',
+                      style: { animationDelay: `${index * 0.2}s` },
+                    },
+                    [
+                      createElement(
+                        'div',
+                        { className: 'hover:rotate-360' },
+                        createElement(item.icon, {
+                          className: 'w-10 sm:w-12 md:w-14 h-10 sm:h-12 md:h-14 mx-auto mb-4 sm:mb-6 text-[var(--neon-blue)]',
+                        })
+                      ),
+                      createElement('h3', { className: 'text-lg sm:text-xl md:text-2xl font-semibold mb-2 sm:mb-4 text-white' }, item.title),
+                      createElement('p', { className: 'text-gray-300' }, item.text),
+                    ]
+                  )
+                )
+              ),
+            ]
+          ),
+
+          // Steps Section
+          createElement(
+            'section',
+            { className: 'py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8' },
+            [
+              createElement(
+                'h2',
+                {
+                  className:
+                    'text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 md:mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)] fade-in-up',
+                },
+                'Як почати з Tickets Partner?'
+              ),
+              createElement(
+                'div',
+                { className: 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 max-w-6xl mx-auto' },
+                steps.map((step, index) =>
+                  createElement(
+                    'div',
+                    {
+                      key: index,
+                      className:
+                        'card text-center bg-gray-800/40 backdrop-blur-lg border border-[rgba(0,240,255,0.2)] hover:border-[rgba(212,0,255,0.3)] hover:shadow-lg transition-all fade-in-up',
+                      style: { animationDelay: `${index * 0.2}s` },
+                    },
+                    [
+                      createElement(
+                        'div',
+                        {
+                          className:
+                            'w-12 sm:w-14 md:w-16 h-12 sm:h-14 md:h-16 bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)] text-white rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 text-lg sm:text-xl md:text-2xl font-bold shadow-md',
+                        },
+                        step.step
+                      ),
+                      createElement('h3', { className: 'text-lg sm:text-xl md:text-2xl font-semibold mb-2 sm:mb-4 text-white' }, step.title),
+                      createElement('p', { className: 'text-gray-300' }, step.text),
+                    ]
+                  )
+                )
+              ),
+            ]
+          ),
+
+          // Reviews Section
+          createElement(
+            'section',
+            { className: 'py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-gray-800/50' },
+            [
+              createElement(
+                'h2',
+                {
+                  className:
+                    'text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 md:mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)] fade-in-up',
+                },
+                'Що кажуть наші користувачі'
+              ),
+              createElement(
+                'div',
+                { className: 'max-w-4xl mx-auto' },
+                createElement(
+                  'div',
+                  { className: 'slider' },
+                  reviews.map((review, index) =>
+                    createElement(
+                      'div',
+                      {
+                        key: index,
+                        className:
+                          'card p-6 sm:p-8 bg-gray-800/40 backdrop-blur-lg border-[1.5px] border-[rgba(0,240,255,0.2)] relative overflow-hidden scale-in',
+                        style: { transitionDelay: `${index * 0.2}s` },
+                      },
+                      [
+                        createElement('div', {
+                          className: 'absolute inset-0 bg-gradient-to-r from-[rgba(0,240,255,0.1)] to-[rgba(212,0,255,0.1)] opacity-50',
+                        }),
+                        createElement(StarIcon, {
+                          className: 'absolute top-4 right-4 w-5 sm:w-6 h-5 sm:h-6 text-[var(--neon-purple)]',
+                        }),
+                        createElement(
+                          'div',
+                          { className: 'relative z-10' },
+                          [
+                            createElement('img', {
+                              src: review.avatar,
+                              alt: review.name,
+                              className: 'w-16 sm:w-20 h-16 sm:h-20 rounded-full mx-auto mb-4 sm:mb-6 border-2 border-[rgba(0,240,255,0.5)]',
+                            }),
+                            createElement('p', { className: 'text-gray-300 italic mb-4 sm:mb-6 text-center' }, `"${review.text}"`),
+                            createElement(
+                              'p',
+                              { className: 'text-[var(--neon-blue)] font-semibold text-lg sm:text-xl text-center' },
+                              review.name
+                            ),
+                            createElement('p', { className: 'text-gray-400 text-sm sm:text-base text-center' }, review.role),
+                          ]
+                        ),
+                      ]
+                    )
+                  )
+                )
+              ),
+            ]
+          ),
+
+          // FAQs Section
+          createElement(
+            'section',
+            { className: 'py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8' },
+            [
+              createElement(
+                'h2',
+                {
+                  className:
+                    'text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 md:mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)] fade-in-up',
+                },
+                'Поширені запитання'
+              ),
+              createElement(
+                'div',
+                { className: 'max-w-3xl mx-auto' },
+                faqs.map((faq, index) =>
+                  createElement(
+                    'div',
+                    {
+                      key: index,
+                      className: 'mb-4 sm:mb-6 border-b border-gray-600/50 bg-gray-800/20 rounded-lg hover:bg-gray-700/30 transition-all',
+                    },
+                    [
+                      createElement(
+                        'button',
+                        {
+                          className: 'flex justify-between items-center w-full py-3 sm:py-4 px-4 sm:px-6 text-left',
+                          onClick: () => setFaqOpen(faqOpen === index ? null : index),
+                        },
+                        [
+                          createElement(
+                            'div',
+                            { className: 'flex items-center gap-2 sm:gap-4' },
+                            [
+                              createElement(ChatBubbleLeftRightIcon, {
+                                className: 'w-5 sm:w-6 h-5 sm:h-6 text-[var(--neon-blue)]',
+                              }),
+                              createElement(
+                                'span',
+                                { className: 'text-base sm:text-lg md:text-xl font-semibold text-white' },
+                                faq.question
+                              ),
+                            ]
+                          ),
+                          createElement(ChevronDownIcon, {
+                            className: `w-5 sm:w-6 h-5 sm:h-6 text-gray-300 transition-transform ${faqOpen === index ? 'rotate-180' : ''}`,
+                          }),
+                        ]
+                      ),
+                      faqOpen === index &&
+                        createElement(
+                          'div',
+                          { className: 'overflow-hidden fade-in-up' },
+                          createElement('p', { className: 'text-gray-300 pb-3 sm:pb-5 px-4 sm:px-6' }, faq.answer)
+                        ),
+                    ]
+                  )
+                )
+              ),
+            ]
+          ),
+
+          // Footer
+          createElement(
+            'footer',
+            { className: 'py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-8 bg-gray-900 text-center' },
+            [
+              createElement(
+                'div',
+                { className: 'relative inline-block scale-in' },
+                [
+                  createElement('div', {
+                    className: 'absolute inset-0 bg-gradient-to-r from-[rgba(0,240,255,0.3)] to-[rgba(212,0,255,0.3)] blur-md rounded-full',
+                  }),
+                  createElement('img', {
+                    src: 'https://i.ibb.co/gZxD3sRf/image-3.png',
+                    alt: 'Tickets Partner Logo',
+                    className: 'w-32 sm:w-40 md:w-48 mx-auto mb-4 sm:mb-6 relative z-10',
+                  }),
+                ]
+              ),
+              createElement(
+                'p',
+                { className: 'text-gray-400 mb-4 sm:mb-6' },
+                '© 2025 ФОП Чекан Богдан Орестович, Код: 3411613291, Україна, 03022, місто Київ, вул. Здановської Юлії, будинок 49, корпус 10, квартира 306.'
+              ),
+              createElement(
+                'div',
+                { className: 'flex justify-center gap-4 sm:gap-6' },
+                [
+                  createElement(
+                    'a',
+                    { href: '#/privacy', onClick: () => setPage('/privacy'), className: 'footer-link' },
+                    'Політика конфіденційності'
+                  ),
+                  createElement(
+                    'a',
+                    { href: '#/terms', onClick: () => setPage('/terms'), className: 'footer-link' },
+                    'Умови використання'
+                  ),
+                  createElement(
+                    'a',
+                    { href: '#/delivery', onClick: () => setPage('/delivery'), className: 'footer-link' },
+                    'Доставка та оплата'
+                  ),
+                  createElement(
+                    'a',
+                    { href: 'https://t.me/TP_TicketsPartner_bot', className: 'footer-link flex items-center gap-2' },
+                    [
+                      createElement('svg', {
+                        className: 'w-4 sm:w-5 h-4 sm:h-5',
+                        fill: 'currentColor',
+                        viewBox: '0 0 24 24',
+                        children: createElement('path', {
+                          d: 'M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.558 17.617c-.414 1.162-1.492 1.453-2.015.617l-3.06-4.882-5.383 1.67c-.87.27-.96-.285-.37-.785l6.12-5.908c.766-.74 1.508-.322 1.04.445l-2.37 3.82 3.06 1.882c.523.322.614-.285.078-.785l-4.82-4.436c-.554-.508-.285-1.162.523-.785l6.12 2.88c.785.37.785.967.077 1.287z',
+                        }),
+                      }),
+                      'Telegram Bot',
+                    ]
+                  ),
+                  createElement(
+                    'a',
+                    { href: 'https://t.me/TicketsPartners', className: 'footer-link flex items-center gap-2' },
+                    [
+                      createElement('svg', {
+                        className: 'w-4 sm:w-5 h-4 sm:h-5',
+                        fill: 'currentColor',
+                        viewBox: '0 0 24 24',
+                        children: createElement('path', {
+                          d: 'M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.558 17.617c-.414 1.162-1.492 1.453-2.015.617l-3.06-4.882-5.383 1.67c-.87.27-.96-.285-.37-.785l6.12-5.908c.766-.74 1.508-.322 1.04.445l-2.37 3.82 3.06 1.882c.523.322.614-.285.078-.785l-4.82-4.436c-.554-.508-.285-1.162.523-.785l6.12 2.88c.785.37.785.967.077 1.287z',
+                        }),
+                      }),
+                      'Telegram Channel',
+                    ]
+                  ),
+                ]
+              ),
+              createElement(
+                'div',
+                { className: 'flex justify-center gap-4 sm:gap-6 mt-4 sm:mt-6' },
+                [
+                  createElement('img', {
+                    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSltJUAOMgY-S01WdzcuvYWyuZWpcY_UopEQ&s',
+                    alt: 'Visa',
+                    className: 'h-6 sm:h-8',
+                  }),
+                  createElement('img', {
+                    src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/2560px-MasterCard_Logo.svg.png',
+                    alt: 'MasterCard',
+                    className: 'h-6 sm:h-8',
+                  }),
+                  createElement('img', {
+                    src: 'https://robot.net.ua/upload/medialibrary/ba5/liqpay.png',
+                    alt: 'LiqPay',
+                    className: 'h-6 sm:h-8',
+                  }),
+                ]
+              ),
+            ]
+          ),
+        ]
+      );
+    };
+
+    // PrivacyPolicy Component
+    const PrivacyPolicy = () =>
+      createElement(
+        'div',
+        { className: 'bg-darkBg text-white min-h-screen font-poppins py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8' },
+        createElement(
+          'div',
+          { className: 'max-w-4xl mx-auto fade-in-up' },
+          [
+            createElement(
+              'h1',
+              {
+                className:
+                  'text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)]',
+              },
+              'Політика конфіденційності'
+            ),
+            createElement('p', { className: 'text-gray-300 mb-4 sm:mb-6' }, 'Остання зміна: 23 липня 2025'),
+            createElement(
+              'section',
+              { className: 'mb-8 sm:mb-10' },
+              [
+                createElement('h2', { className: 'text-xl sm:text-2xl font-semibold text-[var(--neon-blue)] mb-3 sm:mb-4' }, '1. Вступ'),
+                createElement(
+                  'p',
+                  { className: 'text-gray-300' },
+                  'Ця Політика конфіденційності описує, як ФОП Чекан Богдан Орестович (код 3411613291) ("Tickets Partner", "ми", "нас" або "наш") збирає, використовує, зберігає та захищає персональні дані користувачів нашого вебсайту та Telegram-бота.'
+                ),
+              ]
+            ),
+            createElement(
+              'section',
+              { className: 'mb-8 sm:mb-10' },
+              [
+                createElement('h2', { className: 'text-xl sm:text-2xl font-semibold text-[var(--neon-blue)] mb-3 sm:mb-4' }, '2. Які дані ми збираємо?'),
+                createElement('p', { className: 'text-gray-300' }, 'Ми можемо збирати такі типи персональних даних:'),
+                createElement(
+                  'ul',
+                  { className: 'list-disc list-inside text-gray-300 ml-4' },
+                  [
+                    createElement('li', null, [
+                      createElement('strong', null, 'Контактна інформація:'),
+                      ' ім’я, електронна пошта, номер телефону, які ви надаєте при купівлі квитків або зверненні до служби підтримки.',
+                    ]),
+                    createElement('li', null, [
+                      createElement('strong', null, 'Платіжна інформація:'),
+                      ' дані про транзакції (наприклад, через LiqPay, криптовалютні платежі), які обробляються нашими партнерами з оплат.',
+                    ]),
+                    createElement('li', null, [
+                      createElement('strong', null, 'Дані використання:'),
+                      ' IP-адреса, тип браузера, час відвідування, сторінки, які ви переглядаєте, та взаємодія з нашим сайтом або Telegram-ботом.',
+                    ]),
+                    createElement('li', null, [
+                      createElement('strong', null, 'Cookies:'),
+                      ' ми використовуємо cookies для аналітики та персоналізації контенту. Ви можете керувати налаштуваннями cookies у вашому браузері.',
+                    ]),
+                  ]
+                ),
+              ]
+            ),
+            createElement(
+              'section',
+              { className: 'mb-8 sm:mb-10' },
+              [
+                createElement('h2', { className: 'text-xl sm:text-2xl font-semibold text-[var(--neon-blue)] mb-3 sm:mb-4' }, '3. Як ми використовуємо ваші дані?'),
+                createElement('p', { className: 'text-gray-300' }, 'Ми використовуємо ваші дані для:'),
+                createElement(
+                  'ul',
+                  { className: 'list-disc list-inside text-gray-300 ml-4' },
+                  [
+                    createElement('li', null, 'Обробки замовлень на квитки та надання послуг.'),
+                    createElement('li', null, 'Зв’язку з вами щодо подій, оновлень або підтримки.'),
+                    createElement('li', null, 'Аналізу використання сайту для покращення наших сервісів.'),
+                    createElement('li', null, 'Виконання юридичних зобов’язань, наприклад, щодо податків.'),
+                  ]
+                ),
+              ]
+            ),
+            createElement(
+              'section',
+              { className: 'mb-8 sm:mb-10' },
+              [
+                createElement('h2', { className: 'text-xl sm:text-2xl font-semibold text-[var(--neon-blue)] mb-3 sm:mb-4' }, '4. Як ми ділимося вашими даними?'),
+                createElement('p', { className: 'text-gray-300' }, 'Ми можемо передавати ваші дані:'),
+                createElement(
+                  'ul',
+                  { className: 'list-disc list-inside text-gray-300 ml-4' },
+                  [
+                    createElement('li', null, 'Постачальникам платіжних послуг (наприклад, LiqPay) для обробки транзакцій.'),
+                    createElement('li', null, 'Організаторам подій, щоб забезпечити ваш доступ до заходів.'),
+                    createElement('li', null, 'Юридичним органам, якщо це вимагається законом.'),
+                  ]
+                ),
+                createElement('p', { className: 'text-gray-300' }, 'Ми не продаємо ваші персональні дані третім сторонам.'),
+              ]
+            ),
+            createElement(
+              'section',
+              { className: 'mb-8 sm:mb-10' },
+              [
+                createElement('h2', { className: 'text-xl sm:text-2xl font-semibold text-[var(--neon-blue)] mb-3 sm:mb-4' }, '5. Захист даних'),
+                createElement(
+                  'p',
+                  { className: 'text-gray-300' },
+                  'Ми використовуємо шифрування (SSL) та інші заходи безпеки для захисту ваших даних.'
+                ),
+              ]
+            ),
+            createElement(
+              'section',
+              { className: 'mb-8 sm:mb-10' },
+              [
+                createElement('h2', { className: 'text-xl sm:text-2xl font-semibold text-[var(--neon-blue)] mb-3 sm:mb-4' }, '6. Ваші права'),
+                createElement('p', { className: 'text-gray-300' }, 'Згідно з GDPR та іншими законами, ви маєте право:'),
+                createElement(
+                  'ul',
+                  { className: 'list-disc list-inside text-gray-300 ml-4' },
+                  [
+                    createElement('li', null, 'Доступу до ваших персональних даних.'),
+                    createElement('li', null, 'Виправлення або видалення ваших даних.'),
+                    createElement('li', null, 'Обмеження або заперечення проти обробки даних.'),
+                    createElement('li', null, 'Перенесення даних до іншого сервісу.'),
+                  ]
+                ),
+                createElement(
+                  'p',
+                  { className: 'text-gray-300' },
+                  [
+                    'Для реалізації цих прав звертайтеся до нас за адресою: ',
+                    createElement(
+                      'a',
+                      { href: 'mailto:citointrues@gmail.com', className: 'text-[var(--neon-blue)] hover:underline' },
+                      'citointrues@gmail.com'
+                    ),
+                    '.',
+                  ]
+                ),
+              ]
+            ),
+            createElement(
+              'section',
+              { className: 'mb-8 sm:mb-10' },
+              [
+                createElement('h2', { className: 'text-xl sm:text-2xl font-semibold text-[var(--neon-blue)] mb-3 sm:mb-4' }, '7. Зміни до політики'),
+                createElement(
+                  'p',
+                  { className: 'text-gray-300' },
+                  'Ми можемо оновлювати цю політику. Будь-які зміни будуть опубліковані на цій сторінці з оновленою датою.'
+                ),
+              ]
+            ),
+            createElement(
+              'section',
+              { className: 'mb-8 sm:mb-10' },
+              [
+                createElement('h2', { className: 'text-xl sm:text-2xl font-semibold text-[var(--neon-blue)] mb-3 sm:mb-4' }, '8. Контакти'),
+                createElement(
+                  'p',
+                  { className: 'text-gray-300' },
+                  [
+                    'ФОП Чекан Богдан Орестович',
+                    createElement('br'),
+                    'Код: 3411613291',
+                    createElement('br'),
+                    'Адреса: Україна, 03022, місто Київ, вул. Здановської Юлії, будинок 49, корпус 10, квартира 306',
+                    createElement('br'),
+                    'Телефон: +380934307551',
+                    createElement('br'),
+                    'Електронна пошта: ',
+                    createElement(
+                      'a',
+                      { href: 'mailto:citointrues@gmail.com', className: 'text-[var(--neon-blue)] hover:underline' },
+                      'citointrues@gmail.com'
+                    ),
+                    createElement('br'),
+                    'Telegram: ',
+                    createElement(
+                      'a',
+                      { href: 'https://t.me/TP_TicketsPartner_bot', className: 'text-[var(--neon-blue)] hover:underline' },
+                      '@TP_TicketsPartner_bot'
+                    ),
+                  ]
+                ),
+              ]
+            ),
+            createElement(
+              'div',
+              { className: 'text-center' },
+              createElement(
+                'a',
+                { href: '#/', onClick: () => setPage('/'), className: 'button inline-block' },
+                'Повернутися на головну'
+              )
+            ),
+          ]
+        )
+      );
+
+    // TermsOfUse Component
+    const TermsOfUse = () =>
+      createElement(
+        'div',
+        { className: 'bg-darkBg text-white min-h-screen font-poppins py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8' },
+        createElement(
+          'div',
+          { className: 'max-w-4xl mx-auto fade-in-up' },
+          [
+            createElement(
+              'h1',
+              {
+                className:
+                  'text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)]',
+              },
+              'Умови використання'
+            ),
+            createElement('p', { className: 'text-gray-300 mb-4 sm:mb-6' }, 'Остання зміна: 23 липня 2025'),
+            createElement(
+              'section',
+              { className: 'mb-8 sm:mb-10' },
+              [
+                createElement('h2', { className: 'text-xl sm:text-2xl font-semibold text-[var(--neon-blue)] mb-3 sm:mb-4' }, '1. Вступ'),
+                createElement(
+                  'p',
+                  { className: 'text-gray-300' },
+                  'Ці Умови використання ("Умови") регулюють використання вами вебсайту та Telegram-бота, що належать ФОП Чекан Богдан Орестович (код 3411613291) ("Tickets Partner", "ми", "нас" або "наш").'
+                ),
+              ]
+            ),
+            createElement(
+              'section',
+              { className: 'mb-8 sm:mb-10' },
+              [
+                createElement('h2', { className: 'text-xl sm:text-2xl font-semibold text-[var(--neon-blue)] mb-3 sm:mb-4' }, '2. Використання Сервісів'),
+                createElement('p', { className: 'text-gray-300' }, 'Ви погоджуєтеся використовувати наші Сервіси лише для законних цілей. Забороняється:'),
+                createElement(
+                  'ul',
+                  { className: 'list-disc list-inside text-gray-300 ml-4' },
+                  [
+                    createElement('li', null, 'Порушувати будь-які закони чи правила.'),
+                    createElement('li', null, 'Використовувати Сервіси для шахрайства, наприклад, купівлі квитків із використанням чужих платіжних даних.'),
+                    createElement('li', null, 'Намагатися отримати несанкціонований доступ до наших систем.'),
+                  ]
+                ),
+              ]
+            ),
+            createElement(
+              'section',
+              { className: 'mb-8 sm:mb-10' },
+              [
+                createElement('h2', { className: 'text-xl sm:text-2xl font-semibold text-[var(--neon-blue)] mb-3 sm:mb-4' }, '3. Купівля квитків'),
+                createElement('p', { className: 'text-gray-300' }, 'Купуючи квитки через наші Сервіси, ви погоджуєтеся:'),
+                createElement(
+                  'ul',
+                  { className: 'list-disc list-inside text-gray-300 ml-4' },
+                  [
+                    createElement('li', null, 'Надавати точну платіжну та контактну інформацію.'),
+                    createElement('li', null, 'Дотримуватися умов повернення, зазначених на сторінці події.'),
+                    createElement('li', null, 'Використовувати квитки лише для особистого використання, якщо не вказано інше.'),
+                  ]
+                ),
+              ]
+            ),
+            createElement(
+              'section',
+              { className: 'mb-8 sm:mb-10' },
+              [
+                createElement('h2', { className: 'text-xl sm:text-2xl font-semibold text-[var(--neon-blue)] mb-3 sm:mb-4' }, '4. Повернення та відшкодування'),
+                createElement(
+                  'p',
+                  { className: 'text-gray-300' },
+                  [
+                    'Повернення можливе за умов, зазначених організатором. Для оформлення звертайтеся через Telegram-бот або електронну пошту: ',
+                    createElement(
+                      'a',
+                      { href: 'mailto:citointrues@gmail.com', className: 'text-[var(--neon-blue)] hover:underline' },
+                      'citointrues@gmail.com'
+                    ),
+                    '.',
+                  ]
+                ),
+              ]
+            ),
+            createElement(
+              'section',
+              { className: 'mb-8 sm:mb-10' },
+              [
+                createElement('h2', { className: 'text-xl sm:text-2xl font-semibold text-[var(--neon-blue)] mb-3 sm:mb-4' }, '5. Обмеження відповідальності'),
+                createElement(
+                  'p',
+                  { className: 'text-gray-300' },
+                  'Tickets Partner не несе відповідальності за скасування подій, зміни в розкладі чи будь-які збитки, спричинені діями організаторів подій.'
+                ),
+              ]
+            ),
+            createElement(
+              'section',
+              { className: 'mb-8 sm:mb-10' },
+              [
+                createElement('h2', { className: 'text-xl sm:text-2xl font-semibold text-[var(--neon-blue)] mb-3 sm:mb-4' }, '6. Зміни до Умов'),
+                createElement('p', { className: 'text-gray-300' }, 'Ми можемо оновлювати ці Умови. Зміни будуть опубліковані на цій сторінці.'),
+              ]
+            ),
+            createElement(
+              'section',
+              { className: 'mb-8 sm:mb-10' },
+              [
+                createElement('h2', { className: 'text-xl sm:text-2xl font-semibold text-[var(--neon-blue)] mb-3 sm:mb-4' }, '7. Контакти'),
+                createElement(
+                  'p',
+                  { className: 'text-gray-300' },
+                  [
+                    'ФОП Чекан Богдан Орестович',
+                    createElement('br'),
+                    'Код: 3411613291',
+                    createElement('br'),
+                    'Адреса: Україна, 03022, місто Київ, вул. Здановської Юлії, будинок 49, корпус 10, квартира 306',
+                    createElement('br'),
+                    'Телефон: +380934307551',
+                    createElement('br'),
+                    'Електронна пошта: ',
+                    createElement(
+                      'a',
+                      { href: 'mailto:citointrues@gmail.com', className: 'text-[var(--neon-blue)] hover:underline' },
+                      'citointrues@gmail.com'
+                    ),
+                    createElement('br'),
+                    'Telegram: ',
+                    createElement(
+                      'a',
+                      { href: 'https://t.me/TP_TicketsPartner_bot', className: 'text-[var(--neon-blue)] hover:underline' },
+                      '@TP_TicketsPartner_bot'
+                    ),
+                  ]
+                ),
+              ]
+            ),
+            createElement(
+              'div',
+              { className: 'text-center' },
+              createElement(
+                'a',
+                { href: '#/', onClick: () => setPage('/'), className: 'button inline-block' },
+                'Повернутися на головну'
+              )
+            ),
+          ]
+        )
+      );
+
+    // DeliveryAndPayment Component
+    const DeliveryAndPayment = () =>
+      createElement(
+        'div',
+        { className: 'bg-darkBg text-white min-h-screen font-poppins py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8' },
+        createElement(
+          'div',
+          { className: 'max-w-4xl mx-auto fade-in-up' },
+          [
+            createElement(
+              'h1',
+              {
+                className:
+                  'text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-purple)]',
+              },
+              'Доставка та оплата'
+            ),
+            createElement(
+              'section',
+              { className: 'mb-8 sm:mb-10' },
+              [
+                createElement('h2', { className: 'text-xl sm:text-2xl font-semibold text-[var(--neon-blue)] mb-3 sm:mb-4' }, '1. Доставка квитків'),
+                createElement(
+                  'p',
+                  { className: 'text-gray-300' },
+                  'Після успішної оплати квитки автоматично доставляються через наш Telegram-бот (@TP_TicketsPartner_bot) у вигляді QR-коду.'
+                ),
+              ]
+            ),
+            createElement(
+              'section',
+              { className: 'mb-8 sm:mb-10' },
+              [
+                createElement('h2', { className: 'text-xl sm:text-2xl font-semibold text-[var(--neon-blue)] mb-3 sm:mb-4' }, '2. Методи оплати'),
+                createElement('p', { className: 'text-gray-300' }, 'Ми підтримуємо наступні методи оплати:'),
+                createElement(
+                  'ul',
+                  { className: 'list-disc list-inside text-gray-300 ml-4' },
+                  [
+                    createElement('li', null, 'Банківські картки Visa та MasterCard через LiqPay.'),
+                    createElement('li', null, 'Криптовалюти: USDT, BTC, SOL.'),
+                    createElement('li', null, 'Оплата через Privat24.'),
+                  ]
+                ),
+                createElement('p', { className: 'text-gray-300' }, 'Усі транзакції захищені шифруванням та відповідають стандартам безпеки PCI DSS.'),
+              ]
+            ),
+            createElement(
+              'section',
+              { className: 'mb-8 sm:mb-10' },
+              [
+                createElement('h2', { className: 'text-xl sm:text-2xl font-semibold text-[var(--neon-blue)] mb-3 sm:mb-4' }, '3. Політика повернення'),
+                createElement(
+                  'p',
+                  { className: 'text-gray-300' },
+                  [
+                    'Повернення квитків можливе за умов, зазначених організатором події. Звертайтеся через Telegram-бот або електронну пошту: ',
+                    createElement(
+                      'a',
+                      { href: 'mailto:citointrues@gmail.com', className: 'text-[var(--neon-blue)] hover:underline' },
+                      'citointrues@gmail.com'
+                    ),
+                    '. Повернення обробляються протягом 1-3 робочих днів, за вирахуванням комісії LiqPay (2.75%).',
+                  ]
+                ),
+              ]
+            ),
+            createElement(
+              'section',
+              { className: 'mb-8 sm:mb-10' },
+              [
+                createElement('h2', { className: 'text-xl sm:text-2xl font-semibold text-[var(--neon-blue)] mb-3 sm:mb-4' }, '4. Контакти'),
+                createElement(
+                  'p',
+                  { className: 'text-gray-300' },
+                  [
+                    'ФОП Чекан Богдан Орестович',
+                    createElement('br'),
+                    'Код: 3411613291',
+                    createElement('br'),
+                    'Адреса: Україна, 03022, місто Київ, вул. Здановської Юлії, будинок 49, корпус 10, квартира 306',
+                    createElement('br'),
+                    'Телефон: +380934307551',
+                    createElement('br'),
+                    'Електронна пошта: ',
+                    createElement(
+                      'a',
+                      { href: 'mailto:citointrues@gmail.com', className: 'text-[var(--neon-blue)] hover:underline' },
+                      'citointrues@gmail.com'
+                    ),
+                    createElement('br'),
+                    'Telegram: ',
+                    createElement(
+                      'a',
+                      { href: 'https://t.me/TP_TicketsPartner_bot', className: 'text-[var(--neon-blue)] hover:underline' },
+                      '@TP_TicketsPartner_bot'
+                    ),
+                  ]
+                ),
+              ]
+            ),
+            createElement(
+              'div',
+              { className: 'text-center' },
+              createElement(
+                'a',
+                { href: '#/', onClick: () => setPage('/'), className: 'button inline-block' },
+                'Повернутися на головну'
+              )
+            ),
+          ]
+        )
+      );
+
+    // App Component
+    const App = () => {
+      const [page, setPage] = useState('/');
+
+      useEffect(() => {
+        const handleHashChange = () => {
+          const hash = window.location.hash.replace('#', '') || '/';
+          setPage(hash);
+        };
+        window.addEventListener('hashchange', handleHashChange);
+        handleHashChange();
+        return () => window.removeEventListener('hashchange', handleHashChange);
+      }, []);
+
+      return createElement('div', null, [
+        page === '/' && createElement(Landing),
+        page === '/privacy' && createElement(PrivacyPolicy),
+        page === '/terms' && createElement(TermsOfUse),
+        page === '/delivery' && createElement(DeliveryAndPayment),
+      ]);
+    };
+
+    // Render App
+    ReactDOM.render(createElement(App), document.getElementById('app'));
+  </script>
+</body>
+</html>
